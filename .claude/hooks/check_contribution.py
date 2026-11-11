@@ -13,8 +13,8 @@ if not path.endswith(".py") or ".claude" in path.replace("\\", "/"):
     sys.exit(0)
 
 checks = [
-    ["ruff", "check", path],
-    ["ruff", "format", "--check", path],
+    [sys.executable, "-m", "ruff", "check", path],
+    [sys.executable, "-m", "ruff", "format", "--check", path],
     [sys.executable, "-m", "doctest", path],
 ]
 failures = []
